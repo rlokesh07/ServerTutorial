@@ -1,20 +1,23 @@
 <html>
+<script>
+ let ws;
+ const proto = window.location.protocol === 'https:' ? 'wss' : 'ws';
+ ws = new WebSocket(`${proto}://${window.location.host}`);
 
+ ws.onmessage = (event) => {console.log(event.data)
+  document.getElementById("visitors").innerHTML = event.data;};
+
+
+
+</script>
 <head>
  <h1>benjamin nickerson</h1>
+ <h1>number of visitors: <span id ='visitors'></span></h1>
 </head>
 
 <body>
 
 </body>
 
-<script>
-    let ws;
-    const proto = window.location.protocol === 'https:' ? 'wss' : 'ws';
-    ws = new WebSocket(`${proto}://${window.location.host}`);
 
-     ws.onmessage = (event) => {console.log(event.data)};
-
-
-</script>
 </html>
