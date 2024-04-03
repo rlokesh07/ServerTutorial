@@ -1,13 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
+<script>
+ import {numClients} from "./index-ws";
+
+ let ws;
+ const proto = window.location.protocol === 'https:' ? 'wss' : 'ws';
+ ws = new WebSocket(`${proto}://${window.location.host}`);
+
+ ws.onmessage = (event) => {console.log(event.data)
+  document.getElementById("visitors").innerHTML = "sdfsdfsdfsz";};
+
+
+
+</script>
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Hello World</title>
+ <h1>helo world</h1>
+ <h1>number of visitors: <span id ='visitors'></span></h1>
 </head>
+
 <body>
-<h1>Helo World</h1>
-<h1>Number of visitors: <span id="visitors"></span></h1>
-<script type="module" src="./main.js"></script>
+
 </body>
+
+
 </html>

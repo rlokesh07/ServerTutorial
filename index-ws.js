@@ -68,7 +68,7 @@ db.serialize(() => {
     `)
 });
 
-function getCounts() {
+ export function getCounts() {
     db.each("SELECT * FROM visitors", (err, row) => {
         console.log(row);
     })
@@ -77,5 +77,4 @@ function getCounts() {
 function shutdownDB() {
     getCounts();
     console.log('shutting down db');
-    db.close();
-}
+    db.clos
