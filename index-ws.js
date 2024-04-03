@@ -77,4 +77,5 @@ db.serialize(() => {
 function shutdownDB() {
     getCounts();
     console.log('shutting down db');
-    db.clos
+    db.close();
+}
