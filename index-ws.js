@@ -33,10 +33,10 @@ wss.on('connection', function connection(ws){
 
         console.log('Clients connected', numClients);
 
-        wss.broadcast(`current visitors ${numClients}`);
+        wss.broadcast(`${numClients}`);
 
         if (ws.readyState === ws.OPEN){
-            ws.send('welcome to my server');
+
         }
         db.run(`INSERT INTO visitors (count, time)
             VALUES (${numClients}, datetime('now'))
