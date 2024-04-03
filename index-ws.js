@@ -27,7 +27,7 @@ process.on('SIGINT', () => {
 
 const WebSocketServer = require('ws').Server;
 const wss = new WebSocketServer({server: server});
-
+export const numClients = wss.clients.size;
 wss.on('connection', function connection(ws){
 
 
